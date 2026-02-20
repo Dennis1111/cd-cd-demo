@@ -1,0 +1,26 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pr:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - checkout: self
+
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '20.x'
+    displayName: Use Node.js 20
+
+  - script: |
+      node --version
+      npm --version
+      node init.js
+    displayName: Run hello world app
