@@ -9,7 +9,7 @@ pr:
       - main
 
 pool:
-  desktop: DESKTOP-13JC6T8
+  name: Default
 
 steps:
   - checkout: self
